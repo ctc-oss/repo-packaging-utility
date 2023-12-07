@@ -1,0 +1,16 @@
+Generate full and incremental updates of a package repository
+
+~/test-fattr/bin/find-repo-updates.sh ./mirror/ | tar cvf repo-update-$(date +"%Y%m%d").tar -T - | ~/test-fattr/bin/generate-repo-update.sh repo-update-$(date +"%Y%m%d").tar
+
+LEGACY DIRECTIONS
+
+1) List new or updated packages not included in the last update
+
+find-repo-updates.sh <repo-directory>
+
+2) Create tar file containing the new/updated packages
+
+find-repo-updates.sh <repo-dir> | generate-repo-update.sh repo-update-$(date +"%Y%m%d").tar
+
+
+
